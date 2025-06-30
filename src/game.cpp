@@ -1,5 +1,6 @@
 #include "game.h"
 #include <random>
+#include <ctime>
 
 Game::Game()
 {
@@ -10,10 +11,10 @@ Game::Game()
     gameover = false;
     score = 0;
     InitAudioDevice();
-    music = LoadMusicStream("sounds/music.mp3");
+    music = LoadMusicStream("sounds/Tetris.mp3");
     PlayMusicStream(music);
-    rotateSound = LoadSound("sounds/rotate.mp3");
-    clearSound = LoadSound("sound/clear.mp3");
+    rotateSound = LoadSound("sounds/rotate2.mp3");
+    clearSound = LoadSound("sounds/clear2.mp3");
 }
 
 Game::~Game()
@@ -26,6 +27,7 @@ Game::~Game()
 
 Block Game::GetRandomBlock()
 {
+    srand(time(0));
     if(blocks.empty()) {
         blocks = GetAllBlocks();
     }
@@ -47,13 +49,13 @@ void Game::Draw()
     switch (nextBlock.id)
     {
     case 3:
-        nextBlock.Draw(255, 290);
+        nextBlock.Draw(410, 420);
         break;
     case 4:
-        nextBlock.Draw(255, 280);
+        nextBlock.Draw(405, 405);
         break;
     default:
-        nextBlock.Draw(270, 270);
+        nextBlock.Draw(425, 400);
         break;
     }
 }

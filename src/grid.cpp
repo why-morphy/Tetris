@@ -5,10 +5,7 @@ bool Grid::IsRowFull(int row)
 {
     for (int column = 0; column < numColumns; column++)
     {
-        if (grid[row][column] == 0)
-        {
-            return false;
-        }
+        if (grid[row][column] == 0) return false;
     }
     return true;
 }
@@ -34,7 +31,7 @@ Grid::Grid()
 {
     numRows = 20;
     numColumns = 10;
-    sizeCells = 30;
+    sizeCells = 45;
     Initialize();
     colors = GetCellColors();
 }
@@ -67,19 +64,13 @@ void Grid::Draw() {
 
 bool Grid::IsCellOutside(int row, int column)
 {
-    if (row >= 0 && row < numRows && column >= 0 && column < numColumns)
-    {
-        return false;
-    }
+    if (row >= 0 && row < numRows && column >= 0 && column < numColumns) return false;
     return true;
 }
 
 bool Grid::IsCellEmpty(int row, int column)
 {
-    if (grid[row][column] == 0)
-    {
-        return true;
-    }
+    if (grid[row][column] == 0) return true;
     return false;
 }
 
