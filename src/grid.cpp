@@ -36,7 +36,8 @@ Grid::Grid()
     colors = GetCellColors();
 }
 
-void Grid::Initialize() {
+void Grid::Initialize()
+{
     for (int row = 0; row < numRows; row++) {
         for (int column = 0; column < numColumns; column++) {
             grid[row][column] = 0;
@@ -44,7 +45,8 @@ void Grid::Initialize() {
     }
 }
 
-void Grid::Print() {
+void Grid::Print()
+{
     for (int row = 0; row < numRows; row++) {
         for (int column = 0; column < numColumns; column++) {
             std::cout << grid[row][column] << " ";
@@ -53,7 +55,8 @@ void Grid::Print() {
     }
 }
 
-void Grid::Draw() {
+void Grid::Draw()
+{
     for (int row = 0; row < numRows; row++) {
         for (int column = 0; column < numColumns; column++) {
             int cellValue = grid[row][column];
